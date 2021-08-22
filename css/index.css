@@ -1,0 +1,758 @@
+li {
+    list-style: none;
+    float: left;
+}
+
+body {
+    background: #F5EBDF !important;
+}
+
+/* nav */
+
+nav .container {
+    /* 内容垂直居中 */
+    line-height: 60px;
+    margin: 10px auto;
+}
+
+.navbar {
+    background-color:white;
+}
+/* nav-logo */
+
+.logo h1 {
+    font-size: 14px;
+    font-size: 0;
+    padding: 0;
+}
+
+.logo a {
+    /* 设置图片为背景，再设置block从而给高宽 */
+    display: block;
+    width: 105px;
+    height: 24px;
+    background: url(https://hongo.themezaa.com/wp-content/uploads/2018/12/logo@2x.png) no-repeat center center / 100%;
+}
+
+.demonstartion {
+    width: 120px;
+    font-size: 6px;
+    line-height: 20px;
+    background: linear-gradient(to right, green, orange);
+    -webkit-background-clip: text;
+    color: transparent;
+    overflow: visible;
+}
+
+/* nav-navlist */
+
+.navlist ul li {
+    margin: 0 12px;
+    color: black;
+}
+
+.navicon ul li {
+    margin: 0 5px;
+}
+
+/* 轮播图carousel */
+
+:root {
+    --width: 1170px;
+    --height: 609px;
+}
+
+div.slide {
+    position: relative;
+    margin: 81px 0 0 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--width);
+    height: var(--height);
+    /* border: 1px dashed red; */
+    overflow: hidden;
+}
+
+input {
+    display: none;
+}
+
+.labels {
+    position: absolute;
+    bottom: 2.5rem;
+    /* 注意层级 */
+    z-index: 1;
+    width: inherit;
+    justify-content: center;
+    display: flex;
+}
+
+.labels label {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 .5rem .5rem 0;
+    border: 1px solid #808080;
+    background-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+input[id=pic1]:checked~.labels label[for=pic1], input[id=pic2]:checked~.labels label[for=pic2], input[id=pic3]:checked~.labels label[for=pic3], input[id=pic4]:checked~.labels label[for=pic4], input[id=pic5]:checked~.labels label[for=pic5] {
+    background-color: #808080;
+    border: 1px solid #808080;
+}
+
+input[id=pic1]:checked~ul.list {
+    transform: translate(calc(0 * var(--width)));
+}
+
+input[id=pic2]:checked~ul.list {
+    transform: translate(calc(-1 * var(--width)));
+}
+
+input[id=pic3]:checked~ul.list {
+    transform: translate(calc(-2 * var(--width)));
+}
+
+input[id=pic4]:checked~ul.list {
+    transform: translate(calc(-3 * var(--width)));
+}
+
+ul.list {
+    width: calc(var(--width) * 5);
+    height: inherit;
+    position: absolute;
+    z-index: -1;
+    animation: move 5s ease 1s infinite;
+    top: 0px;
+    left: 0px;
+    padding: 0;
+    margin: 0;
+    /* border: 5px dashed green; */
+}
+
+@keyframes move {
+    0% {
+        transform: translate(calc(0 * var(--width)));
+    }
+    50% {
+        transform: translate(calc(-1 * var(--width)));
+    }
+    100% {
+        transform: translate(calc(-2 * var(--width)));
+    }
+}
+
+li.item {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    float: left;
+    /* box-sizing: border-box; */
+    /* border: 1px dashed skyblue; */
+    color: black;
+    font-size: 4rem;
+    text-align: center;
+    line-height: var(--height);
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.slide:hover .list {
+    /* animation-play-state: paused; */
+    /* 修改为完全清除动画 */
+    animation: none;
+}
+
+.slide:hover {
+    /* 鼠标经过手型 */
+    cursor: pointer;
+}
+
+.slide:hover .labels {
+    /* 鼠标经过才展示小圆点 */
+    display: flex;
+}
+
+.labels {
+    position: absolute;
+    bottom: .5rem;
+    z-index: 1;
+    width: inherit;
+    justify-content: center;
+    /* 修改 */
+    display: none;
+}
+
+/* 轮播图描述 */
+
+div.welcomeinfo {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 460px;
+    height: auto;
+    padding-left: 15px;
+    /* background-color: aqua; */
+    z-index: 2;
+    text-align: left;
+    word-wrap: normal;
+    font: 13px Poppins, sans-serif;
+}
+
+div.welcomeinfo li {
+    float: none;
+    margin: 0 0 25px -4px;
+    padding: 0 0 0 35px;
+}
+
+.smalltitle {
+    font: 13px Poppins, sans-serif;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+div.welcomeinfo .proname {
+    font: 50px Poppins, sans-serif;
+    letter-spacing: -1px;
+    font-weight: 600;
+}
+
+.lorem {
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #808080;
+    margin-bottom: 30px;
+}
+
+div.welcomeinfo .welcomeprice {
+    font-size: 20px;
+}
+
+.btn-dark, .btn-dark:focus {
+    background-color: #232323;
+    border-color: #232323;
+    color: #fff;
+    width: 129.16px;
+    height: 32px;
+}
+
+/* 下面的description */
+
+div.bottominfo {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 80px 0 0 20px;
+    /* left: 0; */
+    width: 1100px;
+    height: 200px;
+    padding-left: 15px;
+    /* background-color: pink; */
+    z-index: 2;
+    text-align: center;
+    word-wrap: normal;
+    font: 180px Poppins, sans-serif;
+    font-weight: 700;
+    color: white;
+    overflow: hidden;
+}
+
+div.bottominfo i {
+    padding: 0;
+    margin: 0;
+}
+
+/* 轮播图侧边 follow us */
+
+div.page-sidebar {
+    position: absolute;
+    top: 280px;
+    left: -10px;
+}
+
+div.page-sidebar li {
+    float: none;
+    margin: 10px 0;
+    /* background-color: rosybrown; */
+}
+
+div.page-sidebar li:last-child {
+    /* background-color: royalblue; */
+    position: absolute;
+    top: 170px;
+    left: 9px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    color: rgba(35, 35, 35, 0.5);
+}
+
+/* 白色通栏 shipping */
+
+.service, .service .shippinginfo, .service .row, .service .row div {
+    /* body */
+    background-color: white;
+    height: 150px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.service .row div svg {
+    vertical-align: middle;
+    color: #808080;
+}
+
+.poppins-gray-13 {
+    font-size: 13px;
+    color: #808080;
+}
+
+.service .row div .poppins-gray-13 {
+    height: 26px;
+    margin-top: 65px;
+    margin-left: 15px;
+    padding-right: 85px;
+    border-right: 2px solid gainsboro;
+    /* background-color: lightcyan; */
+    vertical-align: middle;
+}
+
+.service .row div:last-child span {
+    border: none;
+}
+
+/* 缩略图 */
+
+.thumbnail {
+    border: none;
+    margin: 0;
+}
+
+.thumbnailpic {
+    position: relative;
+}
+
+.thumbnailpic::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 14px;
+    height: 100%;
+    width: 90%;
+    background: rgba(0, 0, 0, .4) no-repeat center;
+}
+
+.thumbnailpic:hover:before {
+    /* 使用遮照层 */
+    /* 不是转换块元素，而是显示元素的意思 */
+    display: block;
+}
+
+/* about company */
+
+.aboutcompany {
+    background-color: white;
+    height: 400px;
+    width: auto;
+}
+
+.aboutcompany .companyinfos {
+    position: relative;
+    /* 利用自定义标签规定内容盒子的大小，不设置宽度，采用container的宽度，使用container是因为后面要使用row。 */
+    height: 100%;
+    padding: 130px 0;
+}
+
+.under_smalltitle {
+    font: 25px Poppins, sans-serif;
+    margin-bottom: 15px;
+}
+
+.lorem {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #808080;
+}
+
+/* fashion brand */
+
+.fashionbrands {
+    background-color: #F7F2ED;
+}
+
+.fashionbrand .fashionbrandinfo {
+    padding: 130px 40px;
+}
+
+.fashionbrand .fashionbrandinfo img {
+    width: 100%;
+    height: auto;
+}
+
+.fashionbrandinfo .smalltitle {
+    margin-top: 70px;
+}
+
+/* 白色通栏 recent products + testimonial  */
+
+.recentproduct0, .recentproduct1 {
+    height: 300px;
+    background-color: white;
+}
+
+.recentproduct2 {
+    position: relative;
+    padding: 140px 70px;
+    height: 300px;
+    text-align: center;
+}
+
+.recentproduct2 .under_smalltitle {
+    font: 22px Poppins, sans-serif;
+    margin: 0 0 25px 0;
+}
+
+/* 衣服展示 */
+
+.clothes_exhibition {
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.clothes_exhibition .container {
+    padding-left: 0 0 0 10px;
+}
+
+.clothes_exhibition .card {
+    position: relative;
+    width: 227px;
+    height: 360px;
+    padding: 0px;
+    text-align: center;
+    float: left;
+}
+
+.clothes_exhibition .card:nth-child(5n) {
+    padding-right: 0;
+}
+
+.clothes_exhibition .card .card-img-top {
+    width: 209px;
+    height: 267px;
+}
+
+.clothes_exhibition .card .card-text {
+    font: 14px "Source Sans Pro", sans-serif;
+    color: #808180;
+}
+
+.clothes_exhibition .card:hover a::before {
+    text-decoration: none;
+}
+
+.card:hover a {
+    text-decoration: none;
+    color: #FF6942;
+}
+
+/* testimonial */
+
+.testimonial {
+    background-color: #F7F2ED;
+}
+
+.testimonial .recentproduct2 {
+    padding: 140px 33px;
+}
+
+/* testimonial */
+
+.testimonials-clean {
+    background-color: #F7F2ED;
+    padding-bottom: 110px;
+}
+
+.testimonials-clean p {
+    color: #7d8285;
+}
+
+.testimonials-clean h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    color: inherit;
+}
+
+@media (max-width:767px) {
+    .testimonials-clean h2 {
+        margin-bottom: 25px;
+        padding-top: 25px;
+        font-size: 24px;
+    }
+}
+
+.testimonials-clean .intro p {
+    margin-bottom: 0;
+}
+
+.testimonials-clean .people {
+    padding: 50px 0 20px;
+}
+
+.testimonials-clean .item {
+    margin-bottom: 32px;
+}
+
+@media (min-width:768px) {
+    .testimonials-clean .item {
+        height: 220px;
+    }
+}
+
+.testimonials-clean .item .box {
+    padding: 30px;
+    background-color: #fff;
+    position: relative;
+}
+
+.testimonials-clean .item .box:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: -24px;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-width: 12px 15px;
+    border-top-color: #fff;
+}
+
+.testimonials-clean .item .author {
+    margin-top: 28px;
+    padding-left: 25px;
+}
+
+.testimonials-clean .item .name {
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: inherit;
+}
+
+.testimonials-clean .item .title {
+    font-size: 13px;
+    color: #9da9ae;
+}
+
+.testimonials-clean .item img {
+    max-width: 50px;
+    float: left;
+    margin-right: 12px;
+    margin-top: -5px;
+    border-radius: 50%;
+}
+
+/* blog */
+
+.blog, .blog-content {
+    /* width: 100%;
+    height: auto; */
+    background-color: #FFFFFF;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+}
+
+.blog .container {
+    padding-left: 30px;
+}
+
+.blog-content .container {
+    padding: 70px 70px 170px 70px;
+}
+
+/* position: relative;
+    width: 240px;
+    height: auto;
+    padding: 0px;
+    text-align: center;
+    float: left;
+    background-color: salmon;
+    border: 1px solid green;
+    padding: 15px 0 15px 15px;
+    margin: 15px 0 15px 0;*/
+
+.blog-content .card:nth-child(4n) {
+    padding-right: 0;
+}
+
+.blog-content .card .card-img-top {
+    width: 240px;
+    height: 320px;
+}
+
+.blog-content .card .card-text {
+    font: 14px "Source Sans Pro", sans-serif;
+    color: #808180;
+}
+
+.blog-content .card .card-body:hover a::before {
+    color: #808080;
+    /* text-decoration: none; */
+}
+
+.blog-content .card .card-body:hover a {
+    text-decoration: none;
+    color: #FF6942;
+}
+
+.blog-content .card .card-body .blog-text {
+    font-size: 16px;
+}
+
+.btn-blog-dark {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    margin: 20px 0;
+    font-size: 13px;
+    font-weight: 100;
+}
+
+/* p.poppins-lightgray-13 {
+    color: #808080;
+} */
+
+/* address information */
+
+div.addressinfo {
+    background-color: black;
+    height: 580px;
+}
+
+div.addressinfo div {
+    float: left;
+}
+
+.address-pic {
+    width: 427px;
+    height: 580px;
+    background-image: url(https://hongo.b-cdn.net/wp-content/uploads/2019/05/one-page-img-04.jpg?id=32074);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.address-pic img {
+    width: 427px;
+    height: auto;
+}
+
+/* 中间的信息  */
+
+.middle-info {
+    width: 318px;
+    height: 580px;
+    background-color: #F8F2EC;
+    padding: 180px 40px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.parts-3 {
+    width: 250px;
+    height: auto;
+    /* background-color: skyblue; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.parts-3 .info-details {
+    margin-left: 30px;
+    /* background-color: seagreen; */
+    text-align: left;
+}
+
+.parts-3 .info-details .fa-map-marker-alt {
+    /* 第一个图标fa-2x太小,手动调整 */
+    font-size: 33px;
+}
+
+.info-details strong {
+    line-height: 30px;
+}
+
+.middle-info-content .poppins-gray-13 {
+    line-height: 20px;
+}
+
+.right-form-box {
+    width: 400px;
+    height: auto;
+    color: #fff;
+    margin: 80px 50px 0 75px;
+}
+
+.form-style {
+    color: #fff;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 50px;
+    border: .5px solid #ccc;
+    font-size: 12px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #C6C7C7;
+    margin: 20px 0px;
+    border: none;
+    outline: none;
+    border-bottom: 0.5px solid #C6C7C7;
+    background-color: transparent;
+    appearance: none;
+}
+
+.form-control:last-child {
+    padding: 10px 0 80px 0;
+}
+
+.send-message {
+    height: 32px;
+    width: 135px;
+    background-color: #fff;
+    color: black;
+    border: none;
+    margin-top: 30px;
+}
+
+.blog .instagram {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.text-center {
+    background-color: black;
+    color: gray;
+}
+
+.text-center a {
+    color: gray;
+}
